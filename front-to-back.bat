@@ -6,7 +6,7 @@ set djangoApp=app
 
 cd %frontRoot%
 copy /Y dist\index.html ..\%backRoot%\%djangoApp%\templates
-del ..\%backRoot%\%djangoApp%\static\%djangoApp%\*.js
-copy dist\assets\*.js ..\%backRoot%\%djangoApp%\static\%djangoApp%
+del /f /q ..\%backRoot%\%djangoApp%\static\%djangoApp%\*.*
+copy dist\assets\*.* ..\%backRoot%\%djangoApp%\static\%djangoApp%
 cd ..
 python index_to_template.py %backRoot% %djangoApp%
